@@ -1,6 +1,6 @@
 # svelte-webmcp
 
-Register [WebMCP](https://github.com/webmachinelearning/webmcp) tools from Svelte 5, with registration
+Register [WebMCP](https://github.com/webmachinelearning/webmcp) tools from Svelte, with registration
 tied to the component lifecycle.
 
 WebMCP lets a page hand AI agents a set of callable functions instead of making them scrape the DOM,
@@ -17,7 +17,7 @@ the React hook Chrome maintains.
 npm install svelte-webmcp
 ```
 
-Svelte 5 is the only peer dependency. There are no runtime dependencies.
+Svelte is the only peer dependency. There are no runtime dependencies.
 
 ## Use
 
