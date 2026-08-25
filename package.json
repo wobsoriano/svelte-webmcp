@@ -1,6 +1,6 @@
 {
 	"name": "svelte-webmcp",
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"description": "Register WebMCP tools from Svelte 5, with registration tied to component lifecycle.",
 	"license": "MIT",
 	"repository": {
