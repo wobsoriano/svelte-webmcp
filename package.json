@@ -1,6 +1,6 @@
 {
 	"name": "svelte-webmcp",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Register WebMCP tools from Svelte 5, with registration tied to component lifecycle.",
 	"license": "MIT",
 	"repository": {
@@ -24,6 +24,7 @@
 		"test:e2e": "playwright install && playwright test"
 	},
 	"files": [
+		"NOTICE",
 		"dist",
 		"!dist/**/*.test.*",
 		"!dist/**/*.spec.*"
