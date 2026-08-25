@@ -1,0 +1,14 @@
+svelte-webmcp
+Copyright (c) 2026 Robert Soriano
+
+This product includes software derived from use-webmcp-tool
+(https://github.com/GoogleChromeLabs/use-webmcp-tool), Copyright 2026 Google LLC,
+licensed under the Apache License, Version 2.0.
+
+Portions of src/lib/webmcp-tool.svelte.ts (the result and error normalization
+behaviour, and the late-injection detection strategy) and
+src/lib/webmcp-tool.svelte.spec.ts (the test suite) are derived from that work
+and have been modified to target Svelte 5 rather than React.
+
+A copy of the Apache License, Version 2.0 is available at
+http://www.apache.org/licenses/LICENSE-2.0
