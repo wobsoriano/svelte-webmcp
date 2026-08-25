@@ -77,7 +77,7 @@ controller.abort(); // unregister
 | `formatOutput` | `(result, args) => unknown`                | Shapes the result before normalization.        |
 | `onError`      | `(error) => void`                          | Fires when `execute` fails.                    |
 
-Reading back: `tool.supported` (does this document expose WebMCP at all), `tool.registered`, and
+Read back `tool.supported` (whether this document exposes WebMCP at all), `tool.registered`, and
 `tool.error` (a registration failure, such as a `NotAllowedError` from a `tools` permissions policy).
 
 ### Reactive options
@@ -137,7 +137,7 @@ and is deliberately not checked.
 Because `document.modelContext` is often injected by an extension content script after the page has
 rendered, the class re-checks every 500ms for 10 seconds before settling on `supported: false`.
 
-## Two things worth knowing
+## Caveats
 
 **Registration errors are reported synchronously.** Chrome's `registerTool` returns a promise that
 rejects on a duplicate name, an empty description, an aborted signal, or a permissions-policy denial.
@@ -157,10 +157,10 @@ npm run test      # unit tests, then e2e
 npm run check     # svelte-check
 ```
 
-Unit tests run in headless Chromium against a controllable fake, so registration call counts, error
-paths, and the late-injection probe are all assertable. The Playwright suite runs twice over the same
-build: once with `--enable-features=WebMCP` driving the real `document.modelContext`, and once
-without it to prove the page still works by hand.
+Unit tests run in headless Chromium against a controllable fake, which is what makes registration
+call counts, injected failures, and the late-injection probe assertable. The Playwright suite is a
+contract test against the real `document.modelContext`, kept small on purpose. It runs the same build
+twice, once with `--enable-features=WebMCP` and once without it to check the no-op path.
 
 ## Credits
 

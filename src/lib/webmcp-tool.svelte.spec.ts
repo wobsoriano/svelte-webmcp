@@ -5,15 +5,13 @@ import type { ModelContext, WebMCPToolOptions, WebMCPToolResponse } from './type
 
 /**
  * Unit coverage of `WebMCPTool`. The fake below stands in for the browser, so
- * every assertion is about what the rune does with it: what it registers, when
- * it re-registers, and how it normalizes what `execute` returns.
+ * every assertion is about what the rune does with it.
  *
  * Ported from `useWebMCP.test.jsx` in GoogleChromeLabs/use-webmcp-tool, with
- * two deliberate departures. React's StrictMode test has no Svelte analogue
- * (nothing double-mounts), so its slot covers the equivalent Svelte failure
- * instead, an over-eager effect re-run leaving an orphaned registration. And
- * `renderHook` becomes an `$effect.root` harness, where "rerender with new
- * props" is a mutation of a reactive options object.
+ * two departures. React's StrictMode test has no Svelte analogue, so its slot
+ * covers the equivalent Svelte failure instead, an over-eager effect re-run
+ * leaving an orphaned registration. And `renderHook` becomes an `$effect.root`
+ * harness, where "rerender" is a mutation of a reactive options object.
  */
 
 type FakeTool = {

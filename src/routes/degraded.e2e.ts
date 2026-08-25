@@ -2,8 +2,6 @@
  * Contract test for `WebMCPTool` in a browser with no WebMCP, which is every
  * browser by default. Runs under the `no-webmcp` project, the same build
  * without `--enable-features=WebMCP`.
- *
- * One test, because there is one contract: an absent API is a clean no-op.
  */
 import { expect, test } from '@playwright/test';
 
@@ -20,8 +18,7 @@ test('feature-detects and no-ops without throwing', async ({ page }) => {
 	await expect(page.getByTestId('registered-count')).toHaveText('0/5');
 	await expect(page.getByTestId('tool-manifest').getByRole('listitem')).toHaveCount(0);
 
-	// The host page still rendered and is interactive, so the rune stayed out
-	// of the way rather than taking the page down with it.
+	// The host page is still interactive, so the rune stayed out of the way.
 	await page.getByLabel('Add a todo').fill('Typed by a human');
 	await page.getByRole('button', { name: 'Add' }).click();
 	await expect(page.getByTestId('todo-list').getByText('Typed by a human')).toBeVisible();

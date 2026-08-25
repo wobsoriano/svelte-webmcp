@@ -1,6 +1,6 @@
 {
 	"name": "svelte-webmcp",
-	"version": "0.0.1",
+	"version": "0.0.0",
 	"description": "Register WebMCP tools from Svelte 5, with registration tied to component lifecycle.",
 	"license": "MIT",
 	"repository": {
@@ -17,6 +17,8 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write .",
+		"prepublishOnly": "pnpm build",
+		"release": "bumpp && npm publish",
 		"test:unit": "vitest",
 		"test": "npm run test:unit -- --run && npm run test:e2e",
 		"test:e2e": "playwright install && playwright test"
